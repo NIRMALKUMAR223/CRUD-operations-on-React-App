@@ -1,20 +1,21 @@
     import React, { useEffect, useState } from 'react'
     import axios from 'axios'
     import { Link,Route,Routes } from 'react-router-dom';
-    import Update from './Update';
 
     const Details = () => {
 
         var [del,setDel] = useState(1);
         var [data,setData] = useState([]);
+        async function getData() {
+            var data = await axios.get('https://json-server-for-crud-operations.onrender.com/users')
+            setData(data.data)
+        }
+
         useEffect(()=>{
-                axios.get('https://json-server-for-crud-operations.onrender.com/users').then((res)=>{
-                setData(res.data)
-                console.log(data);
-                
-            })
+            getData();
         },[del])
-        async function handleDelete(id){
+
+        function handleDelete(id){
             axios.delete(`https://json-server-for-crud-operations.onrender.com/users/${id}`).then((res)=>{
                 console.log(res);
                 setDel(del=>del+1);
@@ -28,7 +29,7 @@
             <div className='flex flex-col items-center'>
             <h1 className='text-4xl text-black-500'>Student Details</h1>
                 {data.map(ele=>{return (
-                    <div className='bg-gray-400 text-white  m-2 h-full w-2/3 rounded-2xl p-1'> 
+                    <div className='bg-blue-300 text-white  m-2 h-full w-2/3 rounded-2xl p-1'> 
                         <h1 className='text-2xl text-black m-1'>{ele.name}</h1>
                         <p className='text-1xl'>{ele.age}</p>
                         <p className='text-1xl'>{ele.email}</p>
