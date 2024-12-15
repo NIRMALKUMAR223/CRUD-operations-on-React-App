@@ -9,9 +9,9 @@ function App() {
     <BrowserRouter>
       <Home/>
       <Routes>
-        <Route path='/' element={<Form/>}/>
-        <Route path='/details' element={<Details/>}/>
-        <Route path='/details/updateRecord/:id' element={<Update />} />
+        <Route path='/CRUD-operations-on-React-App' element={<Form/>}/>
+        <Route path='/CRUD-operations-on-React-App/details' element={<Details/>}/>
+        <Route path='/CRUD-operations-on-React-App/details/updateRecord/:id' element={<Update />} />
       </Routes>
     </BrowserRouter>
     </>

@@ -81,7 +81,7 @@ const Update = () => {
                   message="updated submitted successfully!"
                 />}
             <div className='bg-blue-300 text-center w-screen'>
-                <Link to='/details'><button className='bg-green-500 text-white rounded-2xl p-2 w-24 text-2xl m-3'>Cancel</button></Link>
+                <Link to='/CRUD-operations-on-React-App/details'><button className='bg-green-500 text-white rounded-2xl p-2 w-24 text-2xl m-3'>Cancel</button></Link>
                 <button className='bg-red-500 text-white rounded-2xl p-2 w-24 text-2xl m-3' onClick={update}>Save</button>
             </div>  
               </div>
